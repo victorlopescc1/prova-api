@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Sorvete</title>
+</head>
+<body>
+  <h1>Detalhes do Sorvete</h1>
+  <p><strong>ID:</strong> {{ sorvete.id }}</p>
+  <p><strong>Sabor:</strong> {{ sorvete.sabor }}</p>
+  <p><strong>Categoria:</strong> {{ sorvete.categoria }}</p>
+  <p><strong>Preço:</strong> {{ sorvete.preco }}</p>
+  <p><strong>Quantidade em Estoque:</strong> {{ sorvete.qtd_estoque }}</p>
+
+  <form id="delete-form" action="{{ url_for('sorvetes.delete_sorvete', id_sorvete=sorvete.id) }}" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Excluir o Sorvete</button>
+  </form>
+  <a href="{{ url_for('sorvetes.get_sorvetes') }}">Voltar para a lista</a>
+
+
+</body>
+
+</html>

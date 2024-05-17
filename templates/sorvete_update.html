@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar o sorvete</title>
+</head>
+<body>
+  <h1>Editar o sorvete</h1>
+  <form action="{{ url_for('sorvetes.update_sorvete', id_sorvete=sorvete.id) }}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="sabor">Sabor:</label><br>
+    <input type="text" id="sabor" name="sabor"><br>
+    <label for="categoria">Categoria:</label><br>
+    <input type="text" id="categoria" name="categoria"><br>
+    <label for="preco">Preço:</label><br>
+    <input type="number" id="preco" name="preco"><br>
+    <label for="qtd_estoque">Quantidade de Estoque:</label><br>
+    <input type="number" id="qtd_estoque" name="qtd_estoque"><br><br>
+    <button type="submit">Editar</button>
+  </form>
+</body>
+</html>
